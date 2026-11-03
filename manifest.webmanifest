@@ -1,0 +1,26 @@
+{
+  "name": "Kollipara Pavan Kumar | Portfolio",
+  "short_name": "Pavan Kumar",
+  "description": "Personal portfolio of Pavan Kumar, Software and AI/ML Engineer.",
+  "lang": "en-US",
+  "display": "standalone",
+  "orientation": "any",
+  "start_url": "/",
+  "scope": "/",
+  "background_color": "#0B0718",
+  "theme_color": "#0B0718",
+  "icons": [
+    {
+      "src": "/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
