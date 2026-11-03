@@ -1,0 +1,12 @@
+portfolio/
+│
+├── app.py
+├── .env
+├── requirements.txt
+│
+├── templates/
+│     └── index.html
+│
+├── static/
+│     ├── style.css
+│     └── script.js
