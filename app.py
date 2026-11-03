@@ -3,7 +3,7 @@ import smtplib
 from email.mime.text import MIMEText
 
 from dotenv import load_dotenv
-from flask import Flask, jsonify, render_template, request
+from flask import Flask, jsonify, request, send_from_directory
 
 load_dotenv()
 
@@ -12,12 +12,13 @@ app = Flask(__name__)
 
 @app.route("/")
 def home():
-    return render_template("index.html")
+    return send_from_directory(app.root_path, "index.html")
 
 
 @app.route("/contact", methods=["POST"])
 def contact():
     data = request.get_json(silent=True) or {}
+
     name = str(data.get("name", "")).strip()[:100]
     email = str(data.get("email", "")).strip()[:200]
     message = str(data.get("message", "")).strip()[:3000]
@@ -40,6 +41,7 @@ def contact():
 def send_email(subject, body, reply_to):
     sender = os.getenv("EMAIL_USER")
     password = os.getenv("EMAIL_PASS")
+
     if not sender or not password:
         raise RuntimeError("EMAIL_USER / EMAIL_PASS missing in .env")
 
@@ -55,5 +57,4 @@ def send_email(subject, body, reply_to):
 
 
 if __name__ == "__main__":
-    # Local use only. On a host, run: gunicorn app:app
     app.run(debug=True, use_reloader=False)

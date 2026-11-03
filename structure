@@ -4,9 +4,8 @@ portfolio/
 ├── .env
 ├── requirements.txt
 │
-├── templates/
-│     └── index.html
+├── index.html
+├── .gitignore
 │
 ├── static/
-│     ├── style.css
-│     └── script.js
+│     ├──images
